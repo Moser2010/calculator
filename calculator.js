@@ -1,4 +1,4 @@
-var array = [1,2,3,4,5,6,7,8,9]
+var array = [1,2,3,4,5,6,7,8,9,"+","-","*"]
 
 function makeInput() {
     var mkInput = document.createElement("input");
@@ -26,11 +26,11 @@ function makeButton(text){
 }
 
 function buttonNum() {
-    if (buttons(array) == 1) {
+    if (array == 1) {
         return "its 1";
     } else {
     return "cat";
-    }
+    }ua
 }
 function buttons() {
     for(var i = 0; i < array.length; i++) {
@@ -43,7 +43,7 @@ function buttons() {
 makeInput();
 
 buttons();
-makeButton("Enter");
+makeButton("=");
 
   
   
