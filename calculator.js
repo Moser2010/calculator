@@ -1,4 +1,7 @@
-var array = [1,2,3,4,5,6,7,8,9,"+","-","*"]
+//array of numbers for our buttons
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*"]
+
+//makes the Input
 
 function makeInput() {
     var mkInput = document.createElement("input");
@@ -7,49 +10,65 @@ function makeInput() {
     document.body.appendChild(mkInput);
 }
 
+function br() {
+    document.createElement('br');
+    return br
+}
+//this is not used
+//var num = event.target.textContent;
 
-var num = 2
 
-function handleButton(event){
-  document.getElementById('DtaInput').value = document.getElementById('DtaInput').value + buttonNum();
-  
+//this puts text inside of our input when we do our click event.
+function handleButton(button) {
+    debugger;
+    document.getElementById('DtaInput').value = document.getElementById('DtaInput').value + buttonNum(button);
 }
 
-function makeButton(text){
-  var button = document.createElement('button');
-  button.className = 'cal-button';
-  button.id = text;
-  button.appendChild(document.createTextNode(text));
-  button.addEventListener('click', handleButton, false);
-  document.body.appendChild(button);
-  return button;
+
+//this makes a button and listens for a click on the button.
+function makeButton(text) {
+    var button = document.createElement('button');
+    button.className = 'cal-button';
+    button.id = text;
+
+    button.appendChild(document.createTextNode(text));
+    button.addEventListener('click', function() {
+        buttonNum(button,document.getElementById('DtaInput'));
+        
+    }, false);
+    document.body.appendChild(button);
+    return button;
+}
+//if number inside of button is == 1 return "its 1"
+
+function buttonNum(button,display) {
+    if (button.id === "=") {
+        display.value = math.eval(display.value);
+    }
+    else {
+        display.value = display.value + button.id;
+    }
 }
 
-function buttonNum() {
-    if (array == 1) {
-        return "its 1";
-    } else {
-    return "cat";
-    }ua
-}
 function buttons() {
-    for(var i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         makeButton(array[i]);
-       
+
         console.log(i);
     }
 }
 
 makeInput();
-
+br();
 buttons();
+br();
 makeButton("=");
 
-  
-  
 
-  
-  /*
+
+
+
+/*
 mkButtons.textContent = "1"
 
 
@@ -62,4 +81,3 @@ for(var i=0; i < 10; i++) {
 */
 
 //makes the buttons
-
