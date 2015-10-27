@@ -1,3 +1,5 @@
+var array = [1,2,3,4,5,6,7,8,9]
+
 function makeInput() {
     var mkInput = document.createElement("input");
     mkInput.className = "cal-input";
@@ -9,7 +11,7 @@ function makeInput() {
 var num = 2
 
 function handleButton(event){
-  document.getElementById('DtaInput').value = document.getElementById('DtaInput').value + num
+  document.getElementById('DtaInput').value = document.getElementById('DtaInput').value + buttonNum();
   
 }
 
@@ -23,9 +25,25 @@ function makeButton(text){
   return button;
 }
 
+function buttonNum() {
+    if (buttons(array) == 1) {
+        return "its 1";
+    } else {
+    return "cat";
+    }
+}
+function buttons() {
+    for(var i = 0; i < array.length; i++) {
+        makeButton(array[i]);
+       
+        console.log(i);
+    }
+}
 
-makeInput()
-makeButton("Cody");
+makeInput();
+
+buttons();
+makeButton("Enter");
 
   
   
@@ -44,20 +62,4 @@ for(var i=0; i < 10; i++) {
 */
 
 //makes the buttons
-/*
-for(var i = 0; i < 10; i++) {
-    var mkButtons = i
-    mkButtons = document.createElement("button")
-    document.body.appendChild(mkButtons);
-    mkButtons.textContent = i
-    console.log(i)
-}
- 
- mkButtons.addEventListener('click', enterData, false);
- 
- 
- function enterData() {
-         console.log("button was pressed")
-} 
 
-*/
