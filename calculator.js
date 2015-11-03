@@ -1,26 +1,21 @@
 //array of numbers for our buttons
-var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*"]
+var array = [7, 8, 9, 4, 5, 6, 1, 2, 3, "+", "-", "*"];
 
 //makes the Input
-
+var div = document.querySelector("div");
+    div.className = "wrapper";
+    
 function makeInput() {
     var mkInput = document.createElement("input");
     mkInput.className = "cal-input";
     mkInput.id = "DtaInput";
-    document.body.appendChild(mkInput);
+    div.appendChild(mkInput);
 }
 
-function br() {
-    document.createElement('br');
-    return br
-}
-//this is not used
-//var num = event.target.textContent;
 
 
 //this puts text inside of our input when we do our click event.
 function handleButton(button) {
-    debugger;
     document.getElementById('DtaInput').value = document.getElementById('DtaInput').value + buttonNum(button);
 }
 
@@ -36,7 +31,7 @@ function makeButton(text) {
         buttonNum(button,document.getElementById('DtaInput'));
         
     }, false);
-    document.body.appendChild(button);
+    div.appendChild(button);
     return button;
 }
 //if number inside of button is == 1 return "its 1"
@@ -58,11 +53,13 @@ function buttons() {
     }
 }
 
+
+
 makeInput();
-br();
 buttons();
-br();
 makeButton("=");
+
+
 
 
 
