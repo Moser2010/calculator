@@ -1,5 +1,5 @@
 //array of numbers for our buttons
-var array = [7, 8, 9, 4, 5, 6, 1, 2, 3, "+", "-", "*"];
+var array = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, "+", "-", "*", "/",];
 
 //makes the Input
 var div = document.querySelector("div");
